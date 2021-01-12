@@ -13,7 +13,6 @@ public class GraphGenerator {
             Vertex c = new Vertex("C");
             Vertex d = new Vertex("D");
             Vertex e = new Vertex("E");
-            Vertex z = new Vertex("Z");
 
             Edge ab = new Edge(2);
             a.addEdge(b, ab);
@@ -44,7 +43,6 @@ public class GraphGenerator {
             graph.add(c);
             graph.add(d);
             graph.add(e);
-            graph.add(z);
         } else if (n == 2) {
             Vertex a = new Vertex("A");
             Vertex b = new Vertex("B");
