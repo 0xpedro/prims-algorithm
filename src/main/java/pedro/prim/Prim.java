@@ -24,13 +24,13 @@ public class Prim {
             for (Vertex vertex : graph){
                 if (vertex.isVisited()){
                     Pair<Vertex, Edge> candidate = vertex.nextMinimum();
-                    if (candidate.getValue().getWeight() < nextMinimum.getWeight()){
+                    if (candidate.getValue().getPeso() < nextMinimum.getPeso()){
                         nextMinimum = candidate.getValue();
                         nextVertex = candidate.getKey();
                     }
                 }
             }
-            nextMinimum.setIncluded(true);
+            nextMinimum.setIncluido(true);
             nextVertex.setVisited(true);
         }
     }
@@ -59,7 +59,7 @@ public class Prim {
             Iterator<Map.Entry<Vertex,Edge>> it = vertex.getEdges().entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry<Vertex,Edge> pair = it.next();
-                pair.getValue().setPrinted(false);
+                pair.getValue().setPrintado(false);
             }
         }
     }

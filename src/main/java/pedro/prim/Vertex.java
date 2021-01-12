@@ -18,7 +18,7 @@ public class Vertex {
 
     public void addEdge(Vertex vertex, Edge edge){
         if (this.edges.containsKey(vertex)){
-            if (edge.getWeight() < this.edges.get(vertex).getWeight()){
+            if (edge.getPeso() < this.edges.get(vertex).getPeso()){
                 this.edges.replace(vertex, edge);
             }
         } else {
@@ -33,8 +33,8 @@ public class Vertex {
         while (it.hasNext()) {
             Map.Entry<Vertex,Edge> pair = it.next();
             if (!pair.getKey().isVisited()){
-                if (!pair.getValue().isIncluded()) {
-                    if (pair.getValue().getWeight() < nextMinimum.getWeight()) {
+                if (!pair.getValue().isIncluido()) {
+                    if (pair.getValue().getPeso() < nextMinimum.getPeso()) {
                         nextMinimum = pair.getValue();
                         nextVertex = pair.getKey();
                     }
@@ -49,14 +49,14 @@ public class Vertex {
         Iterator<Map.Entry<Vertex,Edge>> it = edges.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry<Vertex,Edge> pair = it.next();
-            if (!pair.getValue().isPrinted()) {
+            if (!pair.getValue().isPrintado()) {
                 sb.append(getLabel());
                 sb.append(" --- ");
-                sb.append(pair.getValue().getWeight());
+                sb.append(pair.getValue().getPeso());
                 sb.append(" --- ");
                 sb.append(pair.getKey().getLabel());
                 sb.append("\n");
-                pair.getValue().setPrinted(true);
+                pair.getValue().setPrintado(true);
             }
         }
         return sb.toString();
@@ -68,15 +68,15 @@ public class Vertex {
             Iterator<Map.Entry<Vertex,Edge>> it = edges.entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry<Vertex,Edge> pair = it.next();
-                if (pair.getValue().isIncluded()) {
-                    if (!pair.getValue().isPrinted()) {
+                if (pair.getValue().isIncluido()) {
+                    if (!pair.getValue().isPrintado()) {
                         sb.append(getLabel());
                         sb.append(" --- ");
-                        sb.append(pair.getValue().getWeight());
+                        sb.append(pair.getValue().getPeso());
                         sb.append(" --- ");
                         sb.append(pair.getKey().getLabel());
                         sb.append("\n");
-                        pair.getValue().setPrinted(true);
+                        pair.getValue().setPrintado(true);
                     }
                 }
             }

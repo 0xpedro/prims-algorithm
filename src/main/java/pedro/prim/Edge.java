@@ -2,35 +2,35 @@ package pedro.prim;
 
 public class Edge {
 
-    private int weight;
-    private boolean isIncluded = false;
-    private boolean isPrinted = false;
+    private int peso;
+    private boolean incluido = false;
+    private boolean printado = false;
 
-    public Edge(int weight) {
-        this.weight = weight;
+    public Edge(int peso) {
+        this.peso = peso;
     }
 
-    public int getWeight() {
-        return weight;
+    public int getPeso() {
+        return peso;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setPeso(int peso) {
+        this.peso = peso;
     }
 
-    public boolean isIncluded() {
-        return isIncluded;
+    public boolean isIncluido() {
+        return incluido;
     }
 
-    public void setIncluded(boolean included) {
-        isIncluded = included;
+    public void setIncluido(boolean incluido) {
+        this.incluido = incluido;
     }
 
-    public boolean isPrinted() {
-        return isPrinted;
+    public boolean isPrintado() {
+        return printado;
     }
 
-    public void setPrinted(boolean printed) {
-        isPrinted = printed;
+    public void setPrintado(boolean printado) {
+        this.printado = printado;
     }
 }
