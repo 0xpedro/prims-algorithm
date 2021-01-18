@@ -6,7 +6,7 @@ public class Edge {
     private boolean incluido = false;
     private boolean printado = false;
 
-    public Edge(int peso) {
+    public Edge(int peso){
         this.peso = peso;
     }
 
